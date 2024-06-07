@@ -154,7 +154,7 @@ function Stats() {
       </div>
 
       <Button variant="contained" color="secondary" onClick={handleStart}>
-        Remote Button
+        Start
       </Button>
 
       <div>
