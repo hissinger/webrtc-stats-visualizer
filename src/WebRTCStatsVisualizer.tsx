@@ -5,20 +5,20 @@ import StreamingPlugin from "chartjs-plugin-streaming";
 
 Chart.register(...registerables, StreamingPlugin);
 
-type WebRTCStatsGraphProps = {
+type WebRTCStatsVisualizerProps = {
   label: string;
   borderColor: string;
   width: number;
   height: number;
 };
 
-export type WebRTCStatsGraphHandle = {
+export type WebRTCStatsVisualizerHandle = {
   pushData: (timestamp: number, value: number) => void;
 };
 
-const WebRTCStatsGraph = React.forwardRef<
-  WebRTCStatsGraphHandle,
-  WebRTCStatsGraphProps
+const WebRTCStatsVisualizer = React.forwardRef<
+  WebRTCStatsVisualizerHandle,
+  WebRTCStatsVisualizerProps
 >((props, ref) => {
   const { label, borderColor, width, height } = props;
 
@@ -87,4 +87,4 @@ const WebRTCStatsGraph = React.forwardRef<
   );
 });
 
-export default WebRTCStatsGraph;
+export default WebRTCStatsVisualizer;

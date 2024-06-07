@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "@mui/material/Button";
-import WebRTCStatsGraph, { WebRTCStatsGraphHandle } from "./WebRTCStatsGraph";
+import WebRTCStatsVisualizer, {
+  WebRTCStatsVisualizerHandle,
+} from "./WebRTCStatsVisualizer";
 import "./Stats.css";
 
 type StatsValue = {
@@ -16,10 +18,10 @@ function Stats() {
   const remotePcRef = React.useRef<RTCPeerConnection | null>(null);
   const localStreamRef = React.useRef<MediaStream | null>(null);
 
-  const videoBitrateRef = React.useRef<WebRTCStatsGraphHandle>(null);
-  const rttRef = React.useRef<WebRTCStatsGraphHandle>(null);
-  const jitterRef = React.useRef<WebRTCStatsGraphHandle>(null);
-  const packetLostRef = React.useRef<WebRTCStatsGraphHandle>(null);
+  const videoBitrateRef = React.useRef<WebRTCStatsVisualizerHandle>(null);
+  const rttRef = React.useRef<WebRTCStatsVisualizerHandle>(null);
+  const jitterRef = React.useRef<WebRTCStatsVisualizerHandle>(null);
+  const packetLostRef = React.useRef<WebRTCStatsVisualizerHandle>(null);
 
   const prevStatsRef = React.useRef<Map<string, StatsValue>>(new Map());
 
@@ -160,7 +162,7 @@ function Stats() {
       <div>
         <div className="grid-container">
           <div className="grid-item">
-            <WebRTCStatsGraph
+            <WebRTCStatsVisualizer
               ref={videoBitrateRef}
               label="video Bitrate"
               borderColor="rgb(255, 0, 0, 1)"
@@ -169,7 +171,7 @@ function Stats() {
             />
           </div>
           <div className="grid-item">
-            <WebRTCStatsGraph
+            <WebRTCStatsVisualizer
               ref={rttRef}
               label="RTT"
               borderColor="rgb(255, 0, 0, 1)"
@@ -179,7 +181,7 @@ function Stats() {
           </div>
           <div className="grid-item">
             <div className="grid-item">
-              <WebRTCStatsGraph
+              <WebRTCStatsVisualizer
                 ref={jitterRef}
                 label="jitter"
                 borderColor="rgb(255, 0, 0, 1)"
@@ -190,7 +192,7 @@ function Stats() {
           </div>
           <div className="grid-item">
             <div className="grid-item">
-              <WebRTCStatsGraph
+              <WebRTCStatsVisualizer
                 ref={packetLostRef}
                 label="packet loss"
                 borderColor="rgb(255, 0, 0, 1)"
