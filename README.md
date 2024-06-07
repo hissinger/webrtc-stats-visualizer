@@ -2,6 +2,10 @@
 
 A React application that visualizes WebRTC statistics in real-time using Chart.js and chartjs-plugin-streaming. This project showcases how to collect and display WebRTC metrics such as video bitrate, RTT, jitter, and packet loss in a dynamic and interactive dashboard.
 
+- [Live demo](https://scintillating-brioche-d5e5f9.netlify.app)
+
+![WebRTC Stats Visualizer](./image.png)
+
 ## Installation
 
 1. Clone the repository:
